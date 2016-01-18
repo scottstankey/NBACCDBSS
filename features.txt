@@ -1,13 +1,13 @@
 Individual Statistics
 	1. Scoring average
-	     i. EWMA scoring average
-	    ii. Average vs. opponent
+	   i.   EWMA scoring average
+	   ii.  Average vs. opponent
 	   iii. Average at home/away
 	2. Shooting percentage (percentage/number/trend)
-	   	 i. Free throws
-		ii. Field goals
+	   i.   Free throws
+	   ii.  Field goals
 	   iii. 3-pointers
-	    iv. 2-pointers
+	   iv.  2-pointers
 	3. Effective shooting percentage
 	4. Position
 	5. Date
