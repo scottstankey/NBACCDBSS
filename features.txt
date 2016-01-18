@@ -1,0 +1,29 @@
+Individual Statistics
+	1. Scoring average
+	     i. EWMA scoring average
+	    ii. Average vs. opponent
+	   iii. Average at home/away
+	2. Shooting percentage (percentage/number/trend)
+	   	 i. Free throws
+		ii. Field goals
+	   iii. 3-pointers
+	    iv. 2-pointers
+	3. Effective shooting percentage
+	4. Position
+	5. Date
+	6. Physical fitness
+	   a. Rest since last game
+	   b. Injury status
+	   c. Games in last 2 weeks
+	7. Minutes played
+	8. Fouls
+	9. TO's
+   10. Plus/minus
+
+Team Statistics
+	1. Pace
+	2. Opponent pace
+	3. Record (win percentage)
+	4. Offensive/defensive ratings
+	5. Win trend (EWMA win percentage)
+	6. Pairwise ranking
