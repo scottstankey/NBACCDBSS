@@ -4,11 +4,13 @@ Individual Statistics
 	   ii.  Average vs. opponent DONE SS
 	   iii. Average at home/away DONE SS
 	   iv. Scoring Trends DONE SS
-	2. Shooting percentage (percentage/number/trend)
-	   i.   Free throws
-	   ii.  Field goals
-	   iii. 3-pointers
-	   iv.  2-pointers
+	2. Shooting percentage (percentage/number/trend) DONE SS
+	   i.   Free throws DONE SS
+	   ii.  Field goals DONE SS
+	   iii. 3-pointers DONE SS
+	   iv.  2-pointers NOPE 
+	   v. Rebounds / Orebs / Drebs / Steals / Tos / 
+	      Fouls / Blocks / Plus Minus / Minutes / Assists DONE SS
 	3. Effective shooting percentage
 	4. Position
 	5. Date
@@ -16,10 +18,6 @@ Individual Statistics
 	   a. Rest since last game
 	   b. Injury status
 	   c. Games in last 2 weeks
-	7. Minutes played
-	8. Fouls
-	9. TO's
-	10. Plus/minus
 
 Team Statistics
 	1. Pace
