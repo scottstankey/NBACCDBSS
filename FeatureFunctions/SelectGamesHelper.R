@@ -9,7 +9,7 @@ SelectGames = function(days = 10, oneseason = T, data = allseasons,
     inds = intersect(which(data$SEASON_ID == seasonid),inds)
   }
   if(onlyhomeoraway == T){inds = intersect(which(data$HOME == home),inds)}
-  if(oneopponent == T){intersect(which(data$OPPONENT == opponent),inds)}
+  if(oneopponent == T){inds = intersect(which(data$OPPONENT == opponent),inds)}
   tmp = data[inds,]
   tmp = tmp[order(tmp$GAME_DATE, decreasing = T),]
   return(tmp)
