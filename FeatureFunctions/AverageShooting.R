@@ -16,85 +16,85 @@ AverageShooting = function(days = 10, oneseason = T, data = allseasons,
   if(fts == T) {outp = ifelse((removeifless == T && nrow(tmp) < days),
                 NA,
                 ifelse(ewma == T,
-                       EMA(tmp[1:days,"FTM"], n = ewmalookback)[days],
-                       sum(tmp[1:days,"FTM"] / days)))}
+                       EMA(tmp[,"FTM"], n = ewmalookback)[days],
+                       sum(tmp[,"FTM"] / days)))}
   if(ftperc == T) {outp = ifelse((removeifless == T && nrow(tmp) < days),
                              NA,
                              #Might want to change this --- not the best calc
                              ifelse(ewma == T,
-                                    EMA(tmp[1:days,"FT_PCT"], n = ewmalookback)[days],
-                                    sum(tmp[1:days,"FTM"] / days) / sum(tmp[1:days,"FTA"] / days)))}
+                                    EMA(tmp[,"FT_PCT"], n = ewmalookback)[days],
+                                    sum(tmp[,"FTM"] / days) / sum(tmp[,"FTA"] / days)))}
   if(fgs == T) {outp = ifelse((removeifless == T && nrow(tmp) < days),
                               NA,
                               ifelse(ewma == T,
-                                     EMA(tmp[1:days,"FGA"], n = ewmalookback)[days],
-                                     sum(tmp[1:days,"FGA"] / days)))}
+                                     EMA(tmp[,"FGA"], n = ewmalookback)[days],
+                                     sum(tmp[,"FGA"] / days)))}
   if(fgperc == T) {outp = ifelse((removeifless == T && nrow(tmp) < days),
                                  NA,
                                  #Might want to change this --- not the best calc
                                  ifelse(ewma == T,
-                                        EMA(tmp[1:days,"FG_PCT"], n = ewmalookback)[days],
-                                        sum(tmp[1:days,"FGM"] / days) / sum(tmp[1:days,"FGA"] / days)))}
+                                        EMA(tmp[,"FG_PCT"], n = ewmalookback)[days],
+                                        sum(tmp[,"FGM"] / days) / sum(tmp[,"FGA"] / days)))}
   if(threefgs == T) {outp = ifelse((removeifless == T && nrow(tmp) < days),
                               NA,
                               ifelse(ewma == T,
-                                     EMA(tmp[1:days,"FG3A"], n = ewmalookback)[days],
-                                     sum(tmp[1:days,"FG3A"] / days)))}
+                                     EMA(tmp[,"FG3A"], n = ewmalookback)[days],
+                                     sum(tmp[,"FG3A"] / days)))}
   if(threefgperc == T) {outp = ifelse((removeifless == T && nrow(tmp) < days),
                                  NA,
                                  #Might want to change this --- not the best calc
                                  ifelse(ewma == T,
-                                        EMA(tmp[1:days,"FG3_PCT"], n = ewmalookback)[days],
-                                        sum(tmp[1:days,"FG3M"] / days) / sum(tmp[1:days,"FG3A"] / days)))} 
+                                        EMA(tmp[,"FG3_PCT"], n = ewmalookback)[days],
+                                        sum(tmp[,"FG3M"] / days) / sum(tmp[,"FG3A"] / days)))} 
   if(rebs == T) {outp = ifelse((removeifless == T && nrow(tmp) < days),
                                    NA,
                                    ifelse(ewma == T,
-                                          EMA(tmp[1:days,"REB"], n = ewmalookback)[days],
-                                          sum(tmp[1:days,"REB"] / days)))}
+                                          EMA(tmp[,"REB"], n = ewmalookback)[days],
+                                          sum(tmp[,"REB"] / days)))}
   if(orebs == T) {outp = ifelse((removeifless == T && nrow(tmp) < days),
                                    NA,
                                    ifelse(ewma == T,
-                                          EMA(tmp[1:days,"OREB"], n = ewmalookback)[days],
-                                          sum(tmp[1:days,"OREB"] / days)))}
+                                          EMA(tmp[,"OREB"], n = ewmalookback)[days],
+                                          sum(tmp[,"OREB"] / days)))}
   if(drebs == T) {outp = ifelse((removeifless == T && nrow(tmp) < days),
                                    NA,
                                    ifelse(ewma == T,
-                                          EMA(tmp[1:days,"DREB"], n = ewmalookback)[days],
-                                          sum(tmp[1:days,"DREB"] / days)))}
+                                          EMA(tmp[,"DREB"], n = ewmalookback)[days],
+                                          sum(tmp[,"DREB"] / days)))}
   if(assists == T) {outp = ifelse((removeifless == T && nrow(tmp) < days),
                                    NA,
                                    ifelse(ewma == T,
-                                          EMA(tmp[1:days,"AST"], n = ewmalookback)[days],
-                                          sum(tmp[1:days,"AST"] / days)))}
+                                          EMA(tmp[,"AST"], n = ewmalookback)[days],
+                                          sum(tmp[,"AST"] / days)))}
   if(tos == T) {outp = ifelse((removeifless == T && nrow(tmp) < days),
                                    NA,
                                    ifelse(ewma == T,
-                                          EMA(tmp[1:days,"TOV"], n = ewmalookback)[days],
-                                          sum(tmp[1:days,"TOV"] / days)))}
+                                          EMA(tmp[,"TOV"], n = ewmalookback)[days],
+                                          sum(tmp[,"TOV"] / days)))}
   if(steals == T) {outp = ifelse((removeifless == T && nrow(tmp) < days),
                                    NA,
                                    ifelse(ewma == T,
-                                          EMA(tmp[1:days,"STL"], n = ewmalookback)[days],
-                                          sum(tmp[1:days,"STL"] / days)))}
+                                          EMA(tmp[,"STL"], n = ewmalookback)[days],
+                                          sum(tmp[,"STL"] / days)))}
   if(blocks == T) {outp = ifelse((removeifless == T && nrow(tmp) < days),
                                    NA,
                                    ifelse(ewma == T,
-                                          EMA(tmp[1:days,"BLK"], n = ewmalookback)[days],
-                                          sum(tmp[1:days,"BLK"] / days)))}
+                                          EMA(tmp[,"BLK"], n = ewmalookback)[days],
+                                          sum(tmp[,"BLK"] / days)))}
   if(pms == T) {outp = ifelse((removeifless == T && nrow(tmp) < days),
                                    NA,
                                    ifelse(ewma == T,
-                                          EMA(tmp[1:days,"PLUS_MINUS"], n = ewmalookback)[days],
-                                          sum(tmp[1:days,"PLUS_MINUS"] / days)))}
+                                          EMA(tmp[,"PLUS_MINUS"], n = ewmalookback)[days],
+                                          sum(tmp[,"PLUS_MINUS"] / days)))}
   if(mins == T) {outp = ifelse((removeifless == T && nrow(tmp) < days),
                                    NA,
                                    ifelse(ewma == T,
-                                          EMA(tmp[1:days,"MIN"], n = ewmalookback)[days],
-                                          sum(tmp[1:days,"MIN"] / days)))}
+                                          EMA(tmp[,"MIN"], n = ewmalookback)[days],
+                                          sum(tmp[,"MIN"] / days)))}
   if(fouls == T) {outp = ifelse((removeifless == T && nrow(tmp) < days),
                                    NA,
                                    ifelse(ewma == T,
-                                          EMA(tmp[1:days,"PF"], n = ewmalookback)[days],
-                                          sum(tmp[1:days,"PF"] / days)))}
+                                          EMA(tmp[,"PF"], n = ewmalookback)[days],
+                                          sum(tmp[,"PF"] / days)))}
   return(outp)
 }

@@ -13,7 +13,7 @@ ScoringWindowAverage = function(days = 10, oneseason = T, data = allseasons,
   outp = ifelse((removeifless == T && nrow(tmp) < days),
                 NA,
                 ifelse(ewma == T,
-                       EMA(tmp[1:days,"PTS"], n = ewmalookback)[days],
-                       sum(tmp[1:days,"PTS"] / days)))
+                       EMA(tmp[,"PTS"], n = ewmalookback)[days],
+                       sum(tmp[,"PTS"] / days)))
   return(outp)
 }
