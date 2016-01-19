@@ -1,8 +1,9 @@
 Individual Statistics
-	1. Scoring average
-	   i.   EWMA scoring average
-	   ii.  Average vs. opponent
-	   iii. Average at home/away
+	1. Scoring average DONE SS
+	   i.   EWMA scoring average DONE SS
+	   ii.  Average vs. opponent DONE SS
+	   iii. Average at home/away DONE SS
+	   iv. Scoring Trends DONE SS
 	2. Shooting percentage (percentage/number/trend)
 	   i.   Free throws
 	   ii.  Field goals
