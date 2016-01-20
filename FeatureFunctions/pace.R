@@ -3,13 +3,16 @@ PaceWindowAverage = function(days = 10, oneseason = T, data = allseasons,
                                 player = "201149", team = "CHI", gamedate = "20151219", season_ID = "22015"
                                 removeifless = F)
 {
-#   inds = intersect(which(data$TEAM_ABBREVIATION == team), which(data$GAME_DATE < gamedate))
-#   inds = if(oneseason == T) {intersect(which(substr(data$SEASON_ID,5,5) == year),inds)}
-#   tmp = data[inds,]
+  #games to search
+  source("~/NBACCDBSS/FeatureFunctions/SelectGamesHelper.R")
+  data2 = SelectGames(days, oneseason, data, 
+                      player, gamedate, season_ID,
+                      removeifless, F, 1,
+                       F, "BOS")
+  data3 = data2$GAME_ID
   
-  tmp = data[intersect(which(data$TEAM_ABBREVIATION == team), 
-                       which(data$SEASON_ID == season_ID), 
-                       which(data$GAME_DATE < gamedate)),]
+  #find all other players in those games
+  tmp = data[which(data$GAME_ID %in% data3), ]
   
   games = unique(tmp$GAME_ID)
   possessions = NULL
@@ -18,14 +21,14 @@ PaceWindowAverage = function(days = 10, oneseason = T, data = allseasons,
   {
     playersInGame = which(tmp$GAME_ID == game)
     possessionsInGame = 0
-    for(player in playersInGame)
+    for(p in playersInGame)
     {
-      possessionsInGame = possessionsInGame + tmp$FGA[player] + tmp$TOV[player] + (.44 * tmp$FTA[player])
+      possessionsInGame = possessionsInGame + tmp$FGA[p] + tmp$TOV[p] + (.44 * tmp$FTA[p])
     }
     possessions = c(possessions, possessionsInGame)
   }
   
-  outp = mean(possessions)
+  outp = mean(possessions) / 2
     
   return(outp)
 }
