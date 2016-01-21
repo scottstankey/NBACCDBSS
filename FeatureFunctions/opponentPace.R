@@ -1,14 +1,14 @@
-
-PaceWindowAverage = function(days = 10, oneseason = T, data = allseasons, 
-                                player = "201149", team = "CHI", gamedate = "20151219", season_ID = "22015"
-                                removeifless = F)
+OppPaceWindowAverage = function(days = 100, oneseason = T, data = allseasons, 
+                             player = "201149", team = "CHI", opp = "UTA", gamedate = "20151219", season_ID = "22015",
+                             removeifless = F)
 {
+  oppplayer = data[which(data$OPPONENT == opp), ]$PLAYER_ID[1]
   #games to search
   source("~/NBACCDBSS/FeatureFunctions/SelectGamesHelper.R")
   data2 = SelectGames(days, oneseason, data, 
-                      player, gamedate, season_ID,
+                      oppplayer, gamedate, season_ID,
                       removeifless, F, 1,
-                       F, "BOS")
+                      F, "BOS")
   data3 = data2$GAME_ID
   
   #find all other players in those games
@@ -29,7 +29,6 @@ PaceWindowAverage = function(days = 10, oneseason = T, data = allseasons,
   }
   
   outp = mean(possessions) / 2
-    
+  
   return(outp)
 }
-
