@@ -23,7 +23,7 @@ PaceWindowAverage = function(days = 10, oneseason = T, data = allseasons,
     possessionsInGame = 0
     for(p in playersInGame)
     {
-      possessionsInGame = possessionsInGame + tmp$FGA[p] + tmp$TOV[p] + (.44 * tmp$FTA[p])
+      possessionsInGame = possessionsInGame + tmp$FGA[p] + tmp$TOV[p] + (.44 * tmp$FTA[p]) - tmp$OREB[p]
     }
     possessions = c(possessions, possessionsInGame)
   }
