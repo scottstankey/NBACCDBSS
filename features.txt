@@ -19,10 +19,13 @@ Individual Statistics
 	   b. Injury status
 	   c. Games in last 2 weeks
 
-Team Statistics
-	1. Pace
-	2. Opponent pace
 	3. Record (win percentage)
-	4. Offensive/defensive ratings
 	5. Win trend (EWMA win percentage)
-	6. Pairwise ranking
+
+Team Statistics
+	1. Pace DONE DB
+	2. Opponent pace DONE DB
+
+	4. Offensive/defensive ratings DONE DB
+
+	6. elo ranking
