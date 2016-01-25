@@ -11,7 +11,7 @@ Individual Statistics
 	   iv.  2-pointers NOPE 
 	   v. Rebounds / Orebs / Drebs / Steals / Tos / 
 	      Fouls / Blocks / Plus Minus / Minutes / Assists DONE SS
-	3. Effective shooting percentage
+	3. Effective shooting percentage DONE
 	4. Position
 	5. Date
 	6. Physical fitness

@@ -6,7 +6,7 @@ AverageShooting = function(days = 10, oneseason = T, data = allseasons,
                            fgs = F, fgperc = F,
                            threefgs = F, threefgperc = F,
                            rebs = F, orebs = F, drebs = F, assists = F, tos = T, 
-                           steals = F, blocks = F, pms = F, mins = F, fouls = F)
+                           steals = F, blocks = F, pms = F, mins = F, fouls = F, EFS = F)
 {
   source("/Users/scottstankey/GitHub/NBACCDBSS/FeatureFunctions/SelectGamesHelper.R")
   tmp = SelectGames(days, oneseason, data, 
@@ -96,5 +96,11 @@ AverageShooting = function(days = 10, oneseason = T, data = allseasons,
                                    ifelse(ewma == T,
                                           EMA(tmp[,"PF"], n = ewmalookback)[days],
                                           sum(tmp[,"PF"] / days)))}
+  if(EFS == T){outp = ifelse((removeifless == T && nrow(tmp) < days),
+                             NA,
+                             ifelse(ewma == T,
+                                    EMA((tmp[,"FGM"] + .5 * tmp[,"FG3M"]) / tmp[,"FGA"], n = ewmalookback)[days],
+                                    sum(((tmp[,"FGM"] + .5 * tmp[,"FG3M"]) / tmp[,"FGA"]) / days)))}
+  #FG + .5 3s /// FG attempted
   return(outp)
 }
