@@ -11,16 +11,16 @@ Individual Statistics
 	   iv.  2-pointers NOPE 
 	   v. Rebounds / Orebs / Drebs / Steals / Tos / 
 	      Fouls / Blocks / Plus Minus / Minutes / Assists DONE SS
-	3. Effective shooting percentage DONE
-	4. Position
-	5. Date
-	6. Physical fitness
-	   a. Rest since last game
-	   b. Injury status
-	   c. Games in last 2 weeks
+	3. Effective shooting percentage DONE SS
+	4. Position DON’T HAVE
+	5. Date DONE
+	6. Physical fitness DONE SS
+	   a. Rest since last game DONE SS
+	   b. Injury status DON’T HAVE
+	   c. Games in last 2 weeks DONE SS
 
-	3. Record (win percentage)
-	5. Win trend (EWMA win percentage)
+	3. Record (win percentage) DONE SS
+	5. Win trend (EWMA win percentage) DON’T CARE
 
 Team Statistics
 	1. Pace DONE DB
