@@ -6,9 +6,11 @@ AverageShooting = function(days = 10, oneseason = T, data = allseasons,
                            fgs = F, fgperc = F,
                            threefgs = F, threefgperc = F,
                            rebs = F, orebs = F, drebs = F, assists = F, tos = T, 
-                           steals = F, blocks = F, pms = F, mins = F, fouls = F, EFS = F)
+                           steals = F, blocks = F, pms = F, mins = F, fouls = F, EFS = F,
+                           winperc = F)
 {
   source("/Users/scottstankey/GitHub/NBACCDBSS/FeatureFunctions/SelectGamesHelper.R")
+  source("/Users/scottstankey/GitHub/NBACCDBSS/FeatureFunctions/dateconv.R")
   tmp = SelectGames(days, oneseason, data, 
                     player, gamedate, seasonid,
                     removeifless, onlyhomeoraway, home,
@@ -101,6 +103,9 @@ AverageShooting = function(days = 10, oneseason = T, data = allseasons,
                              ifelse(ewma == T,
                                     EMA((tmp[,"FGM"] + .5 * tmp[,"FG3M"]) / tmp[,"FGA"], n = ewmalookback)[days],
                                     sum(((tmp[,"FGM"] + .5 * tmp[,"FG3M"]) / tmp[,"FGA"]) / days)))}
-  #FG + .5 3s /// FG attempted
+  if(winperc = T){outp = ifelse((removeifless == T && nrow(tmp) < days),
+                                NA,
+                                length(which(tmp$WL == "W")) / nrow(tmp)}
+  if(rest = T){outp = dateconv(as.numeric(tmp$GAME_DATE[1])) - dateconv(as.numeric(tmp$GAME_DATE[2]))}
   return(outp)
 }
