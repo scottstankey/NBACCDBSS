@@ -7,7 +7,7 @@ AverageShooting = function(days = 10, oneseason = T, data = allseasons,
                            threefgs = F, threefgperc = F,
                            rebs = F, orebs = F, drebs = F, assists = F, tos = T, 
                            steals = F, blocks = F, pms = F, mins = F, fouls = F, EFS = F,
-                           winperc = F)
+                           winperc = F, rest = F, lasttwoweeks = F)
 {
   source("/Users/scottstankey/GitHub/NBACCDBSS/FeatureFunctions/SelectGamesHelper.R")
   source("/Users/scottstankey/GitHub/NBACCDBSS/FeatureFunctions/dateconv.R")
@@ -107,5 +107,7 @@ AverageShooting = function(days = 10, oneseason = T, data = allseasons,
                                 NA,
                                 length(which(tmp$WL == "W")) / nrow(tmp)}
   if(rest = T){outp = dateconv(as.numeric(tmp$GAME_DATE[1])) - dateconv(as.numeric(tmp$GAME_DATE[2]))}
+  if(lasttwoweeks = T){outp = (length(which(dateconv(as.numeric(tmp$GAME_DATE[1])) - 
+                                               sapply((as.numeric(tmp$GAME_DATE)), dateconv) < 15)) - 1)}
   return(outp)
 }

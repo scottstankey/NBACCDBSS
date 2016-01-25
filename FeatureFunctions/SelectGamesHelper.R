@@ -12,7 +12,11 @@ SelectGames = function(days = 10, oneseason = T, data = allseasons,
   if(oneopponent == T){inds = intersect(which(data$OPPONENT == opponent),inds)}
   tmp = data[inds,]
   tmp = tmp[order(tmp$GAME_DATE, decreasing = T),]
-  tmp = tmp[c(1:days),]
+  if(days <= nrow(tmp))
+  {
+    tmp = tmp[c(1:days),]
+  } 
+
   return(tmp)
 }
 
