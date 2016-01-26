@@ -4,7 +4,7 @@ OppWindowAverage = function(days = 100, ewmalookback = 5, oneseason = T, data = 
 {
   oppplayer = data[which(data$OPPONENT == opp), ]$PLAYER_ID[1]
   #games to search
-  source("~/NBACCDBSS/FeatureFunctions/SelectGamesHelper.R")
+  #source("~/NBACCDBSS/FeatureFunctions/SelectGamesHelper.R")
   data2 = SelectGames(days, oneseason, data, 
                       oppplayer, gamedate, season_ID,
                       removeifless, F, 1,
