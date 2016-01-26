@@ -10,6 +10,9 @@ AverageShooting = function(days = 10, oneseason = T, data = allseasons,
                     player, gamedate, seasonid,
                     removeifless, onlyhomeoraway, home,
                     oneopponent, opponent)
+if(nrow(tmp) > 0)
+{
+  
 
   ptsstat = ifelse((removeifless == T && nrow(tmp) < days),
                 NA,
@@ -107,14 +110,14 @@ AverageShooting = function(days = 10, oneseason = T, data = allseasons,
   {winpercstat = ifelse((removeifless == T && nrow(tmp) < days),
                                 NA,
                                 length(which(tmp$WL == "W")) / nrow(tmp))}
-  {reststat = dateconv(as.numeric(tmp$GAME_DATE[1])) - dateconv(as.numeric(tmp$GAME_DATE[2]))}
-  {lasttwoweeksstat = (length(which(dateconv(as.numeric(tmp$GAME_DATE[1])) - 
-                                               sapply((as.numeric(tmp$GAME_DATE)), dateconv) < 15)) - 1)}
+  #{reststat = dateconv(as.numeric(tmp$GAME_DATE[1])) - dateconv(as.numeric(tmp$GAME_DATE[2]))}
+  #{lasttwoweeksstat = (length(which(dateconv(as.numeric(tmp$GAME_DATE[1])) - 
+                                              # sapply((as.numeric(tmp$GAME_DATE)), dateconv) < 15)) - 1)}
   outp = c(ptsstat, ftsstat, ftpercstat,
            fgsstat, fgpercstat,
            threefgsstat, threefgpercstat,
            rebsstat, orebsstat, drebsstat, assistsstat, tosstat, 
-           stealsstat, blocksstat, pmsstat, minsstat, foulsstat, EFSstat,
-           winpercstat, reststat, lasttwoweeksstat)
+           stealsstat, blocksstat, pmsstat, minsstat, foulsstat, EFSstat, lasttwoweeksstat)
   return(outp)
+} else return (c(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0))
 }

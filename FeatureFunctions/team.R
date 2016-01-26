@@ -8,6 +8,10 @@ teamWindowAverage = function(days = 10, ewmalookback = 5, oneseason = T, data = 
                       player, gamedate, season_ID,
                       removeifless, F, 1,
                        F, "BOS")
+  if(nrow(data2) > 0)
+  {
+    
+  
   team = data2$TEAM_ABBREVIATION[1]
   data3 = data2$GAME_ID
   
@@ -109,5 +113,6 @@ teamWindowAverage = function(days = 10, ewmalookback = 5, oneseason = T, data = 
   }
     
   return(outp)
+} else { return(rep(0,31))}
 }
 

@@ -9,6 +9,8 @@ OppWindowAverage = function(days = 100, ewmalookback = 5, oneseason = T, data = 
                       oppplayer, gamedate, season_ID,
                       removeifless, F, 1,
                       F, "BOS")
+  if(nrow(data2) > 0)
+  {
   team = data2$TEAM_ABBREVIATION[1]
   data3 = data2$GAME_ID
   
@@ -105,9 +107,10 @@ OppWindowAverage = function(days = 100, ewmalookback = 5, oneseason = T, data = 
       tmpvar = EMA(teamMatrix[,i], n = ewmalookback)[days]
       outp = c(outp,tmpvar)
     }
-  }else{
+  } else{
     outp = colMeans(teamMatrix)
   }
-  
   return(outp)
+  } else {return(rep(0,31))}
+  
 }
