@@ -1,6 +1,6 @@
 
 teamWindowAverage = function(days = 10, ewmalookback = 5, oneseason = T, data = allseasons, 
-                                player = "201149", gamedate = "20151219", season_ID = "22015"
+                                player = "201149", gamedate = "20151219", season_ID = "22015",
                                 removeifless = F, ewma = T)
 {
   #games to search
