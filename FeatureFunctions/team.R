@@ -3,7 +3,12 @@ teamWindowAverage = function(days = 10, ewmalookback = 5, oneseason = T, data = 
                                 player = "201149", gamedate = "20151219", season_ID = "22015",
                                 removeifless = F, ewma = T)
 {
+<<<<<<< Updated upstream
 
+=======
+  #games to search
+  #source("~/NBACCDBSS/FeatureFunctions/SelectGamesHelper.R")
+>>>>>>> Stashed changes
   data2 = SelectGames(days, oneseason, data, 
                       player, gamedate, season_ID,
                       removeifless, F, 1,
