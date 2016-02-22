@@ -214,6 +214,7 @@ AverageShooting = function(days = 10, oneseason = T, data = allseasons,
                      ifelse(ewma == T,
                             EMA(tmp[,"FTM"], n = ewmalookback)[days],
                             sum(tmp[,"FTM"] / nrow(tmp), na.rm = T)))
+    tmp[which(tmp[,"FTA"] == 0),"FTA"] = 1
     ftpercstat = ifelse((removeifless == T && nrow(tmp) < days),
                         NA,
                         #Might want to change this --- not the best calc
@@ -225,6 +226,7 @@ AverageShooting = function(days = 10, oneseason = T, data = allseasons,
                      ifelse(ewma == T,
                             EMA(tmp[,"FGA"], n = ewmalookback)[days],
                             sum(tmp[,"FGA"] / nrow(tmp), na.rm = T)))
+    tmp[which(tmp[,"FGA"] == 0),"FGA"] = 1
 {fgpercstat = ifelse((removeifless == T && nrow(tmp) < days),
                      NA,
                      #Might want to change this --- not the best calc
@@ -236,6 +238,7 @@ AverageShooting = function(days = 10, oneseason = T, data = allseasons,
                        ifelse(ewma == T,
                               EMA(tmp[,"FG3A"], n = ewmalookback)[days],
                               sum(tmp[,"FG3A"], na.rm = T)  / nrow(tmp)))}
+tmp[which(tmp[,"FG3A"] == 0),"FG3A"] = 1
 {threefgpercstat = ifelse((removeifless == T && nrow(tmp) < days),
                           NA,
                           #Might want to change this --- not the best calc
@@ -292,6 +295,7 @@ AverageShooting = function(days = 10, oneseason = T, data = allseasons,
                     ifelse(ewma == T,
                            EMA(tmp[,"PF"], n = ewmalookback)[days],
                            sum(tmp[,"PF"], na.rm = T) / nrow(tmp)))}
+tmp[which(tmp[,"FGA"] == 0),"FGA"] = 1
 {EFSstat = ifelse((removeifless == T && nrow(tmp) < days),
                   NA,
                   ifelse(ewma == T,
