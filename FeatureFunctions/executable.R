@@ -440,8 +440,9 @@ allseasons = as.data.frame(allseasons)
 allseasons[is.na(allseasons)] = 0
 
 featuretable = NULL
-for(i in 1:nrow(allseasons)) {
-  
+start = Sys.time()
+for(i in 1:100) {
+  print(i)
   
   feature1 = AverageShooting(days = 1e7, oneseason = T, data = allseasons, player = allseasons[i,"PLAYER_ID"],
                              gamedate = allseasons[i,"GAME_DATE"], seasonid = allseasons[i,"SEASON_ID"],
@@ -485,5 +486,7 @@ for(i in 1:nrow(allseasons)) {
   
   featuretable = rbind(featuretable,allfeaturesmotherfuckkaa)
 }
+end = Sys.time()
+print(start - end)
 write.csv(featuretable, "AverageFromSeasonFeatures.csv")
 
